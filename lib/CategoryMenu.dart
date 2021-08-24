@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
-
 import 'Decorate.dart';
-import 'MyAppbar.dart';
+
 import 'NewsCategory.dart';
+import 'package:news_app/reusableWidget/TopAppBar.dart';
 
 class CategoryMenu extends StatefulWidget {
   static const routeName = "Category Menu";
@@ -17,8 +17,9 @@ class _CategoryMenuState extends State<CategoryMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppbar(
-        title: "News App",
+      appBar:PreferredSize(
+        preferredSize: const Size.fromHeight(70),
+        child: TopBar(false, "News App"),
       ),
       body:
       ListView(children: [
