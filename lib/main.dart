@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'home screen/Home-Catagorized.dart';
+=======
+>>>>>>> parent of fae8092 (AppBar)
 =======
 >>>>>>> parent of fae8092 (AppBar)
 

@@ -150,6 +150,7 @@ packages:
     source: hosted
     version: "2.1.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
   win32:
     dependency: transitive
     description:
@@ -164,6 +165,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.0"
+=======
+>>>>>>> parent of fae8092 (AppBar)
 =======
 >>>>>>> parent of fae8092 (AppBar)
 sdks:
