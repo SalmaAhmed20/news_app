@@ -1,8 +1,9 @@
 import 'dart:convert';
-import 'package:news_app/model/NewsResponse.dart';
-import 'package:news_app/model/SourcesResponse.dart';
+import 'package:drawer/model/NewsResponse.dart';
+import 'package:drawer/model/SourcesResponse.dart';
+import 'package:drawer/model/sources.dart';
 import 'package:http/http.dart' as http;
-import 'package:news_app/model/sources.dart';
+
 
 Future<SourcesResponse> getNewsSources(String Category) async {
   //https://newsapi.org/v2/top-headlines/sources?category=business&apiKey=2fa96c132af34256b66520e8e25071bc

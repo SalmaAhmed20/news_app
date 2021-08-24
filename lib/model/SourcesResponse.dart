@@ -1,4 +1,5 @@
-import 'package:news_app/model/sources.dart';
+
+import 'package:drawer/model/sources.dart';
 
 class SourcesResponse {
 
