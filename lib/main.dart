@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'home screen/Home-Catagorized.dart';
 =======
 >>>>>>> parent of fae8092 (AppBar)
@@ -10,16 +11,23 @@ import 'home screen/Home-Catagorized.dart';
 =======
 import 'package:news_app/home%20screen/Home-Catagorized.dart';
 >>>>>>> parent of 1058eeb (Merge home screen with side menu)
+=======
+>>>>>>> parent of cebdbb8 (Merge branch 'Home_Catogorized' into Side_menu)
 
-void main() {
-  runApp(MyApp());
+import 'Side_menu.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+<<<<<<< HEAD
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -119,6 +127,9 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+=======
+      home: Side_Menu(),
+>>>>>>> parent of cebdbb8 (Merge branch 'Home_Catogorized' into Side_menu)
     );
   }
 }
