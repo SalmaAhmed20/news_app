@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'Marquee.dart';
 
 class TopBar extends StatefulWidget {
   bool isSearchPage;
@@ -13,18 +14,20 @@ class TopBar extends StatefulWidget {
 class _TopBarState extends State<TopBar> {
   Icon customIcon = Icon(Icons.search);
 
-   Widget customwidget;
+  Widget customwidget;
 
   void initState() {
     customwidget = !widget.isSearchPage
         ? Container(
             padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
             child: Center(
-                child: Text(widget.title,
-                    style: GoogleFonts.exo(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w400,
-                    ))),
+                child: MarqueeWidget(
+              child: Text(widget.title,
+                  style: GoogleFonts.exo(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                  )),
+            )),
           )
         : Container(
             padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
@@ -42,7 +45,8 @@ class _TopBarState extends State<TopBar> {
     return AppBar(
       shape: ContinuousRectangleBorder(
         borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(100), bottomRight: Radius.circular(100)),
+            bottomLeft: Radius.circular(100),
+            bottomRight: Radius.circular(100)),
       ),
       actions: [
         if (widget.isSearchPage)
@@ -125,3 +129,4 @@ class _TopBarState extends State<TopBar> {
     );
   }
 }
+

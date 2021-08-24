@@ -35,9 +35,9 @@ class _NewsFragementState extends State<NewsFragement> {
             print ("Error");
             return IconButton(
                 onPressed: () {
-                  // setState(() {
-                  //   this._futureNews = getNewsSources(widget.Category);
-                  // });
+                  setState(() {
+                    this._futureNews =LoadArticals(widget._sources);
+                  });
                 },
                 icon: Icon(Icons.refresh));
           }

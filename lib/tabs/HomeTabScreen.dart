@@ -22,7 +22,7 @@ class _HomeTabsState extends State<HomeTabs> {
       child: Column(
         children: [
           Container(
-            margin: const EdgeInsets.fromLTRB(0, 15, 0, 15),
+            margin: const EdgeInsets.fromLTRB(0, 12, 0, 12),
             child: TabBar(
                 isScrollable: true,
                 indicatorColor: Colors.transparent,

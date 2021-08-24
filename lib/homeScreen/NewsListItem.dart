@@ -1,65 +1,73 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/model/NewsItem.dart';
 
+import 'ArticalContent.dart';
+
 class NewsListItem extends StatelessWidget {
   NewsItem _item;
   NewsListItem(this._item);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(10),
-      decoration: BoxDecoration(color: Colors.transparent),
-      child: Card(
-        elevation: 0,
-        color: Colors.transparent,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-              child: Image.network(
-                _item.urlToImage == null
-                    ? 'https://www.google.com/search?q=breaking+news&sxsrf=ALeKk035pVw6ayyEi-VvPKU7AIWJBpESRw:1629761633729&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjUtPyZp8jyAhXJ6eAKHWmMADkQ_AUoAXoECAEQAw&biw=1536&bih=754#imgrc=UPqakD3QGXbvzM'
-                    : _item.urlToImage,
-                fit: BoxFit.cover,
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.fromLTRB(0, 8, 0, 8),
-              child: Text(
-                _item.title,
-                style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.fromLTRB(0, 0, 0, 8),
-              child: Text(
-                _item.description,
-                style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.w500),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  Date(_item.publishedAt),
-                  style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
-                      color: Color(0xFFA3A3A3)),
+    return InkWell(
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => ArticalContent(_item)));
+      },
+      child: Container(
+        margin: const EdgeInsets.all(10),
+        decoration: BoxDecoration(color: Colors.transparent),
+        child: Card(
+          elevation: 0,
+          color: Colors.transparent,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.network(
+                  _item.urlToImage == null
+                      ? 'https://www.google.com/search?q=breaking+news&sxsrf=ALeKk035pVw6ayyEi-VvPKU7AIWJBpESRw:1629761633729&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjUtPyZp8jyAhXJ6eAKHWmMADkQ_AUoAXoECAEQAw&biw=1536&bih=754#imgrc=UPqakD3QGXbvzM'
+                      : _item.urlToImage,
+                  fit: BoxFit.cover,
                 ),
-              ],
-            )
-          ],
+              ),
+              Container(
+                margin: const EdgeInsets.fromLTRB(0, 8, 0, 8),
+                child: Text(
+                  _item.title,
+                  style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.fromLTRB(0, 0, 0, 8),
+                child: Text(
+                  _item.description,
+                  style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w500),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    Date(_item.publishedAt),
+                    style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 12,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xFFA3A3A3)),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
