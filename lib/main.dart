@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/homeScreen/Home-Catagorized.dart';
 
+import 'SplashScreen.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -16,6 +18,11 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xFF39A552)
       ),
       home: HomeCatogrized('Sports'),
+      routes: {
+        SplashScreen.routeName:(buildContext)=>SplashScreen(),
+      },
+      initialRoute: SplashScreen.routeName,
+
     );
   }
 }

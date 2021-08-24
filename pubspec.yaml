@@ -53,13 +53,24 @@ flutter:
         - asset: assets/fonts/Montserrat-Regular.ttf
         - asset: assets/fonts/Montserrat-Medium.ttf
         - asset: assets/fonts/Montserrat-Bold.ttf
+    - family: Exo
+      fonts:
+        - asset: assets/fonts/Exo-Regular.ttf
+    - family: PoppinsBold
+      fonts:
+        - asset: assets/fonts/Poppins-Bold.ttf
 
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
   uses-material-design: true
   assets:
     - assets/icons/2.0x/
     - assets/icons/3.0x/
     - assets/images/3.0x/
     - assets/images/2.0x/
+    - assets/images/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
