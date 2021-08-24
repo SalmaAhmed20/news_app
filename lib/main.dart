@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/home%20screen/Home-Catagorized.dart';
 
-import 'Side_menu.dart';
-
-void main() => runApp(MyApp());
-
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
+void main() {
+  runApp(MyApp());
 }
 
-class _MyAppState extends State<MyApp> {
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Side_Menu(),
+      debugShowCheckedModeBanner: false,
+      title: 'News',
+      theme: ThemeData(
+        primaryColor: Color(0xFF39A552)
+      ),
+      home: HomeCatogrized('Sports'),
     );
   }
 }
