@@ -1,8 +1,6 @@
-import 'package:drawer/api/APIManger.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app/api/APIManger.dart';
 
-
-import '../Side_menu.dart';
 import '../reusableWidget/TopAppBar.dart';
 import '../tabs/HomeTabScreen.dart';
 import '../model/SourcesResponse.dart';
@@ -28,10 +26,10 @@ class _HomeCatogrizedState extends State<HomeCatogrized> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(70),
+        preferredSize: const Size.fromHeight(80),
         child: TopBar(isSearchPage, widget.Category),
       ),
-      drawer:Side_Menu(),
+      drawer: Drawer(),
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(

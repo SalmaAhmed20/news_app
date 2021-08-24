@@ -1,6 +1,5 @@
-import 'package:drawer/home%20screen/NewsFragment.dart';
 import 'package:flutter/material.dart';
-
+import 'package:news_app/home%20screen/NewsFragment.dart';
 
 import 'TabItem.dart';
 import '../model/sources.dart';

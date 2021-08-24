@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'home screen/Home-Catagorized.dart';
 =======
 >>>>>>> parent of fae8092 (AppBar)
 =======
 >>>>>>> parent of fae8092 (AppBar)
+=======
+import 'package:news_app/home%20screen/Home-Catagorized.dart';
+>>>>>>> parent of 1058eeb (Merge home screen with side menu)
 
 void main() {
   runApp(MyApp());

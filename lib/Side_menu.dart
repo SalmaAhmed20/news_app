@@ -3,7 +3,15 @@ import 'package:flutter/material.dart';
 class Side_Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  Drawer(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("News"),
+        backgroundColor: Color.fromARGB(255, 57, 165, 82),
+      ),
+      body: const Center(
+        child: Text('My Page!'),
+      ),
+      drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -71,6 +79,7 @@ class Side_Menu extends StatelessWidget {
             ),
           ],
         ),
-      );
+      ),
+    );
   }
 }
