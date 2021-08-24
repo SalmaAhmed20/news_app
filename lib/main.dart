@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/homeScreen/Home-Catagorized.dart';
 
-import 'SplashScreen.dart';
+import 'splashScreen/SplashScreen.dart';
 
 void main() {
   runApp(MyApp());

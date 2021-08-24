@@ -3,7 +3,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'CategoryMenu.dart';
+import '../categoryScreen/CategoryMenu.dart';
 
 class SplashScreen extends StatefulWidget {
   static const routeName="SplashScreen";
