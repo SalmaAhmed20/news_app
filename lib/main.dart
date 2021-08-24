@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/home%20screen/Home-Catagorized.dart';
+import 'package:news_app/homeScreen/Home-Catagorized.dart';
 
 void main() {
   runApp(MyApp());

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/api/APIManger.dart';
-import 'package:news_app/home%20screen/NewsListItem.dart';
+import 'package:news_app/homeScreen/NewsListItem.dart';
 import 'package:news_app/model/NewsResponse.dart';
 import '../model/sources.dart';
 
