@@ -17,10 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Color(0xFF39A552),
       ),
-      routes: {
-        SplashScreen.routeName:(buildContext)=>SplashScreen(),
-      },
-      initialRoute: SplashScreen.routeName,
+      home: SplashScreen(),
 
     );
   }
