@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'News',
       theme: ThemeData(
-        primaryColor: Color(0xFF39A552)
+        primaryColor: Color(0xFF39A552),
       ),
       routes: {
         SplashScreen.routeName:(buildContext)=>SplashScreen(),

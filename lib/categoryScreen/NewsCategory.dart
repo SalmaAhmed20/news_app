@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:news_app/homeScreen/Home-Catagorized.dart';
 class NewsCategory extends StatelessWidget {
   String title;
   String imagePath;
@@ -21,7 +21,9 @@ class NewsCategory extends StatelessWidget {
                     width: 135.0,
                     child:decorate(color,imagePath),
                   ),
-                  onTap: (){},
+                  onTap: (){
+                    HomeCatogrized(title);
+                  },
                 ),
 
 

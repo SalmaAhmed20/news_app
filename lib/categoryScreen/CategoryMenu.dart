@@ -19,7 +19,7 @@ class _CategoryMenuState extends State<CategoryMenu> {
     return Scaffold(
       appBar:PreferredSize(
         preferredSize: const Size.fromHeight(70),
-        child: TopBar(false,"News App"),
+        child: TopBar(false,'News App'),
       ),
         drawer: SideMenu(),
       body:
@@ -30,7 +30,6 @@ class _CategoryMenuState extends State<CategoryMenu> {
             Container(
               width: 300,
               height:70,
-
                child:Padding(padding: 
                 const EdgeInsets.all(5.0),
               child: Row(
@@ -62,8 +61,8 @@ class _CategoryMenuState extends State<CategoryMenu> {
             ),
             ),
             Row(children: [
-              NewsCategory("Sports", 'assets/images/sports.png',Color.fromARGB(255, 201, 28, 34),decore.decorateBottomLeft),
-              NewsCategory( "Politics", 'assets/images/Politics.png',Color.fromARGB(255, 0,62, 144),decore.decoratebottomRight),
+              NewsCategory('Sports', 'assets/images/sports.png',Color.fromARGB(255, 201, 28, 34),decore.decorateBottomLeft),
+              NewsCategory( 'Politics', 'assets/images/Politics.png',Color.fromARGB(255, 0,62, 144),decore.decoratebottomRight),
             ]),
             Row(children: [
               NewsCategory("Health", 'assets/images/health.png',Color.fromARGB(255, 237,30, 121),decore.decorateBottomLeft),
