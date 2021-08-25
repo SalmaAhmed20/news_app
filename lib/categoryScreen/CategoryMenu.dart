@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'Decorate.dart';
 import 'package:news_app/reusableWidget/SideMenu.dart';
@@ -17,53 +16,62 @@ class _CategoryMenuState extends State<CategoryMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:PreferredSize(
-        preferredSize: const Size.fromHeight(70),
-        child: TopBar(false,"News App"),
-      ),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(70),
+          child: AppBar(
+              shape: ContinuousRectangleBorder(
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(100),
+                    bottomRight: Radius.circular(100)),
+              ),
+              title: Container(
+                padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                child: Center(
+                  child: Text("NewsApp",
+                      style: TextStyle(
+                        fontFamily: 'exo',
+                        fontSize: 25,
+                        fontWeight: FontWeight.w400,
+                      )),
+                ),
+              )),
+        ),
         drawer: SideMenu(),
-      body:
-      ListView(children: [
-          Column(
-            children: [
-            
+        body: ListView(children: [
+          Column(children: [
             Container(
               width: 300,
-              height:70,
-
-               child:Padding(padding:
-                const EdgeInsets.all(5.0),
-              child: Row(
-
-                mainAxisAlignment:MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-
-                children: [
-                Expanded(child:
-                Stack(
+              height: 70,
+              child: Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Pick your category of interest",
-                 style: TextStyle(
-                   fontSize: 22,
-                   fontWeight: FontWeight.bold,
-                   fontFamily: "PoppinsBold",
-                 ),
-                 textAlign: TextAlign.left,
-                 textDirection: TextDirection.ltr,
-
-                ),
-
+                    Expanded(
+                        child: Stack(
+                      children: [
+                        Text(
+                          "Pick your category of interest",
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "PoppinsBold",
+                          ),
+                          textAlign: TextAlign.left,
+                          textDirection: TextDirection.ltr,
+                        ),
+                      ],
+                    )),
                   ],
-                )
-                  ),
-
-              ],),
-
-            ),
+                ),
+              ),
             ),
             Row(children: [
-              NewsCategory("Sports", 'assets/images/sports.png',Color.fromARGB(255, 201, 28, 34),decore.decorateBottomLeft),
-              NewsCategory( "Politics", 'assets/images/Politics.png',Color.fromARGB(255, 0,62, 144),decore.decoratebottomRight),
+              NewsCategory("Sports", 'assets/images/sports.png',
+                  Color.fromARGB(255, 201, 28, 34), decore.decorateBottomLeft),
+              NewsCategory("Politics", 'assets/images/Politics.png',
+                  Color.fromARGB(255, 0, 62, 144), decore.decoratebottomRight),
             ]),
             Row(children: [
               NewsCategory("Health", 'assets/images/health.png',
@@ -86,5 +94,4 @@ class _CategoryMenuState extends State<CategoryMenu> {
           ]),
         ]));
   }
-    
 }
