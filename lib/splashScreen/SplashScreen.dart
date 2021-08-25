@@ -26,6 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
           image: AssetImage("assets/images/bg_image.png"),
           fit: BoxFit.fill,
         )
+
       ),
       child: Scaffold(
          backgroundColor: Colors.transparent,

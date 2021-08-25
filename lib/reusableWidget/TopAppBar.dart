@@ -30,7 +30,7 @@ class _TopBarState extends State<TopBar> {
             )),
           )
         : Container(
-            padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 30, 30, 0),
             child: Center(
               child: Text(widget.title,
                   style: GoogleFonts.exo(

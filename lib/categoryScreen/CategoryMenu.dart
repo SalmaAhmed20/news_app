@@ -17,7 +17,6 @@ class _CategoryMenuState extends State<CategoryMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar:PreferredSize(
         preferredSize: const Size.fromHeight(70),
         child: TopBar(false,"News App"),
@@ -31,6 +30,7 @@ class _CategoryMenuState extends State<CategoryMenu> {
             Container(
               width: 300,
               height:70,
+
                child:Padding(padding: 
                 const EdgeInsets.all(5.0),
               child: Row(
