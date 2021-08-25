@@ -17,7 +17,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Color(0xFF39A552)
       ),
-      home: HomeCatogrized('Sports'),
       routes: {
         SplashScreen.routeName:(buildContext)=>SplashScreen(),
       },

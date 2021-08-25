@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'Decorate.dart';
-
+import 'package:news_app/reusableWidget/SideMenu.dart';
 import 'NewsCategory.dart';
 import 'package:news_app/reusableWidget/TopAppBar.dart';
 
@@ -17,10 +17,12 @@ class _CategoryMenuState extends State<CategoryMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar:PreferredSize(
         preferredSize: const Size.fromHeight(70),
-        child: TopBar(false, "News App"),
+        child: TopBar(false,"News App"),
       ),
+        drawer: SideMenu(),
       body:
       ListView(children: [
           Column(

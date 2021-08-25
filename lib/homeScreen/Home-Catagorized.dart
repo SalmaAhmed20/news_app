@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/api/APIManger.dart';
 import 'package:news_app/reusableWidget/SideMenu.dart';
-
 import '../reusableWidget/TopAppBar.dart';
 import '../tabs/HomeTabScreen.dart';
 import '../model/SourcesResponse.dart';

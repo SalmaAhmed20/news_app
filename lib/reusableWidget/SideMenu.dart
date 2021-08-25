@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:news_app/categoryScreen/CategoryMenu.dart';
 class SideMenu extends StatelessWidget {
 
 
@@ -46,6 +46,7 @@ class SideMenu extends StatelessWidget {
             ),
             onTap: () {
               Navigator.pop(context);
+              CategoryMenu();
             },
           ),
           ListTile(
