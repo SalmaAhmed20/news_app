@@ -19,7 +19,7 @@ class _CategoryMenuState extends State<CategoryMenu> {
     return Scaffold(
       appBar:PreferredSize(
         preferredSize: const Size.fromHeight(70),
-        child: TopBar(false,'News App'),
+        child: TopBar(false,"News App"),
       ),
         drawer: SideMenu(),
       body:
@@ -30,13 +30,14 @@ class _CategoryMenuState extends State<CategoryMenu> {
             Container(
               width: 300,
               height:70,
-               child:Padding(padding: 
+
+               child:Padding(padding:
                 const EdgeInsets.all(5.0),
               child: Row(
-                
+
                 mainAxisAlignment:MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                
+
                 children: [
                 Expanded(child:
                 Stack(
@@ -49,28 +50,38 @@ class _CategoryMenuState extends State<CategoryMenu> {
                  ),
                  textAlign: TextAlign.left,
                  textDirection: TextDirection.ltr,
-                
+
                 ),
-                
+
                   ],
-                ) 
+                )
                   ),
-               
+
               ],),
-              
+
             ),
             ),
             Row(children: [
-              NewsCategory('Sports', 'assets/images/sports.png',Color.fromARGB(255, 201, 28, 34),decore.decorateBottomLeft),
-              NewsCategory( 'Politics', 'assets/images/Politics.png',Color.fromARGB(255, 0,62, 144),decore.decoratebottomRight),
+              NewsCategory("Sports", 'assets/images/sports.png',Color.fromARGB(255, 201, 28, 34),decore.decorateBottomLeft),
+              NewsCategory( "Politics", 'assets/images/Politics.png',Color.fromARGB(255, 0,62, 144),decore.decoratebottomRight),
             ]),
             Row(children: [
-              NewsCategory("Health", 'assets/images/health.png',Color.fromARGB(255, 237,30, 121),decore.decorateBottomLeft),
-              NewsCategory("Business", 'assets/images/bussines.png',Color.fromARGB(255, 207,126, 72),decore.decoratebottomRight),
+              NewsCategory("Health", 'assets/images/health.png',
+                  Color.fromARGB(255, 237, 30, 121), decore.decorateBottomLeft),
+              NewsCategory(
+                  "Business",
+                  'assets/images/bussines.png',
+                  Color.fromARGB(255, 207, 126, 72),
+                  decore.decoratebottomRight),
             ]),
             Row(children: [
-              NewsCategory("Enviroment", 'assets/images/environment.png',Color.fromARGB(255, 72,130, 207),decore.decorateBottomLeft),
-              NewsCategory("Science", 'assets/images/science.png',Color.fromARGB(255, 242,211, 82),decore.decoratebottomRight),
+              NewsCategory("Enviroment", 'assets/images/environment.png',
+                  Color.fromARGB(255, 72, 130, 207), decore.decorateBottomLeft),
+              NewsCategory(
+                  "Science",
+                  'assets/images/science.png',
+                  Color.fromARGB(255, 242, 211, 82),
+                  decore.decoratebottomRight),
             ]),
           ]),
         ]));

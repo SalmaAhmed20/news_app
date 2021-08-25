@@ -30,16 +30,13 @@ class _TopBarState extends State<TopBar> {
             )),
           )
         : Container(
-            padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
             child: Center(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 40, 0),
-                child: Text(widget.title,
-                    style: GoogleFonts.exo(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w400,
-                    ),),
-              ),
+              child: Text(widget.title,
+                  style: GoogleFonts.exo(
+                    fontSize: 25,
+                    fontWeight: FontWeight.w400,
+                  )),
             ),
           );
   }
@@ -75,12 +72,11 @@ class _TopBarState extends State<TopBar> {
                                       setState(() {
                                         customIcon = Icon(Icons.search);
                                         customwidget = Container(
-                                          padding: const EdgeInsets.fromLTRB(
-                                              0, 30, 0, 0),
+                                          padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                                           child: Center(
                                             child: Text(widget.title,
                                                 style: GoogleFonts.exo(
-                                                  fontSize: 30,
+                                                  fontSize: 25,
                                                   fontWeight: FontWeight.w400,
                                                 )),
                                           ),
