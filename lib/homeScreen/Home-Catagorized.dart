@@ -7,7 +7,8 @@ import '../model/SourcesResponse.dart';
 
 class HomeCatogrized extends StatefulWidget {
   final String Category;
-  HomeCatogrized(this.Category);
+  String KeyWord;
+  HomeCatogrized(this.Category,{this.KeyWord});
 
   @override
   _HomeCatogrizedState createState() => _HomeCatogrizedState();
@@ -40,7 +41,7 @@ class _HomeCatogrizedState extends State<HomeCatogrized> {
             future: newsFuture,
             builder: (buildcontext, snapshot) {
               if (snapshot.hasData) {
-                return HomeTabs(snapshot.data.sources);
+                return HomeTabs(snapshot.data.sources,KeyWord:widget.KeyWord);
               } else if (snapshot.hasError) {
                 return IconButton(
                     onPressed: () {

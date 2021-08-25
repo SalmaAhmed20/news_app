@@ -6,7 +6,8 @@ import '../model/sources.dart';
 
 class NewsFragement extends StatefulWidget {
   Sources _sources;
-  NewsFragement(this._sources);
+  String KeyWord;
+  NewsFragement(this._sources,{this.KeyWord});
 
   @override
   _NewsFragementState createState() => _NewsFragementState();
@@ -18,7 +19,7 @@ class _NewsFragementState extends State<NewsFragement> {
   void initState()
   {
     super.initState();
-    _futureNews=LoadArticals(widget._sources);
+    _futureNews=LoadArticals(widget._sources,Keyword:widget.KeyWord);
   }
   Widget build(BuildContext context) {
     return Container(
