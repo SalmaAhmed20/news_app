@@ -6,7 +6,8 @@ import '../model/sources.dart';
 
 class HomeTabs extends StatefulWidget {
    List<Sources> _sources;
-  HomeTabs(this._sources);
+   String KeyWord;
+  HomeTabs(this._sources,{this.KeyWord});
 
   @override
   _HomeTabsState createState() => _HomeTabsState();
@@ -37,7 +38,7 @@ class _HomeTabsState extends State<HomeTabs> {
                     .toList()),
           ),Expanded(
             child: TabBarView(children:
-              widget._sources.map((source) => NewsFragement(source)).toList(),
+              widget._sources.map((source) => NewsFragement(source,KeyWord:widget.KeyWord)).toList(),
 
             ),
           )
