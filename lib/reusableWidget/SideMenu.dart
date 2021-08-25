@@ -45,8 +45,7 @@ class SideMenu extends StatelessWidget {
               alignment: Alignment(-1.2, 0),
             ),
             onTap: () {
-              Navigator.pop(context);
-              CategoryMenu();
+              Navigator.pushReplacement(context,  MaterialPageRoute(builder: (context) =>CategoryMenu()));
             },
           ),
           ListTile(
@@ -69,7 +68,7 @@ class SideMenu extends StatelessWidget {
               alignment: Alignment(-1.2, 0),
             ),
             onTap: () {
-              Navigator.pop(context);
+
             },
           ),
         ],
