@@ -1,78 +1,99 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/categoryScreen/CategoryMenu.dart';
+import 'package:flutter/material.dart';
 class SideMenu extends StatelessWidget {
 
-
+  // Function onSideMenuItemClick;
+  // SideMenu(this.onSideMenuItemClick);
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          Container(
-            height: 140,
-            child: const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 57, 165, 82),
-              ),
+    List<SideMenuItem> sideMenuList = [
+      SideMenuItem(SideMenuItem.CATEGORIES, "Categories", Icons.view_list_rounded),
+      SideMenuItem(SideMenuItem.SETTINGS, "Settings", Icons.settings),
+    ];
+    return Container(
+      //height: 50,
+
+      child: Drawer(
+        child: Column(
+          children: [
+            Container(
+              color: Theme.of(context).primaryColor,
+              padding: EdgeInsets.symmetric(vertical: 50),
               child: Center(
                 child: Text(
                   'News App!',
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 25,
                       fontWeight: FontWeight.bold,
+                      fontSize: 24,
                       fontFamily: 'Poppins'),
                 ),
               ),
             ),
-          ),
-          ListTile(
-            contentPadding: EdgeInsets.only(top: 10, left: 10),
-            leading: Icon(
-              Icons.view_list_rounded,
-              size: 35,
-              color: Colors.black,
-            ),
-            title: Align(
-              child: new Text(
-                'Categories',
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Poppins'),
+            Expanded(
+              child: ListView.builder(
+                itemBuilder: (context, index) {
+                  return SideMenuWidget(sideMenuList[index]);
+                },
+                itemCount: sideMenuList.length,
               ),
-              alignment: Alignment(-1.2, 0),
-            ),
-            onTap: () {
-              Navigator.pushReplacement(context,  MaterialPageRoute(builder: (context) =>CategoryMenu()));
-            },
-          ),
-          ListTile(
-            contentPadding: EdgeInsets.only(left: 10),
-            dense: true,
-            visualDensity: VisualDensity(horizontal: 0, vertical: -4),
-            leading: Icon(
-              Icons.settings,
-              size: 35,
-              color: Colors.black,
-            ),
-            title: Align(
-              child: new Text(
-                'Settings',
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Poppins'),
-              ),
-              alignment: Alignment(-1.2, 0),
-            ),
-            onTap: () {
-
-            },
-          ),
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
 }
+
+class SideMenuItem {
+  static const CATEGORIES = 'Categories';
+  static const SETTINGS = 'settings';
+  String id;
+  String title;
+  IconData iconData;
+
+  SideMenuItem(this.id, this.title, this.iconData);
+}
+
+class SideMenuWidget extends StatelessWidget {
+  final SideMenuItem sideMenuItem;
+  //Function onSideMenuItemClick;
+  SideMenuWidget(this.sideMenuItem);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        // Navigator.of(context).pushNamed(sideMenuItem.routeName);
+        // onSideMenuItemClick(sideMenuItem);
+
+      },
+      child: ListTile(
+        contentPadding: EdgeInsets.only(top: 10, left: 10),
+        dense: true,
+        visualDensity: VisualDensity(horizontal: 0, vertical: -3),
+        leading: Icon(
+          sideMenuItem.iconData,
+          size: 35,
+          color: Colors.black,
+        ),
+        title: Align(
+          child: new Text(
+            sideMenuItem.title,
+            style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Poppins'),
+          ),
+          alignment: Alignment(-1.2, 0),
+        ),
+        onTap: () {
+          Navigator.pop(context);
+        },
+      ),
+    );
+  }
+}
+
+
