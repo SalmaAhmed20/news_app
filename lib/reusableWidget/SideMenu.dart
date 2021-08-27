@@ -1,46 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/categoryScreen/CategoryMenu.dart';
-import 'package:flutter/material.dart';
-class SideMenu extends StatelessWidget {
 
+class SideMenu extends StatelessWidget {
   // Function onSideMenuItemClick;
   // SideMenu(this.onSideMenuItemClick);
   @override
   Widget build(BuildContext context) {
     List<SideMenuItem> sideMenuList = [
-      SideMenuItem(SideMenuItem.CATEGORIES, "Categories", Icons.view_list_rounded),
+      SideMenuItem(
+          SideMenuItem.CATEGORIES, "Categories", Icons.view_list_rounded),
       SideMenuItem(SideMenuItem.SETTINGS, "Settings", Icons.settings),
     ];
-    return Container(
-      //height: 50,
-
-      child: Drawer(
-        child: Column(
-          children: [
-            Container(
-              color: Theme.of(context).primaryColor,
-              padding: EdgeInsets.symmetric(vertical: 50),
-              child: Center(
-                child: Text(
-                  'News App!',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 24,
-                      fontFamily: 'Poppins'),
-                ),
+    return Drawer(
+      child: Column(
+        children: [
+          Container(
+            color: Theme.of(context).primaryColor,
+            padding: EdgeInsets.symmetric(vertical: 50),
+            child: Center(
+              child: Text(
+                'News App!',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                    fontFamily: 'Poppins'),
               ),
             ),
-            Expanded(
-              child: ListView.builder(
-                itemBuilder: (context, index) {
-                  return SideMenuWidget(sideMenuList[index]);
-                },
-                itemCount: sideMenuList.length,
-              ),
-            )
-          ],
-        ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemBuilder: (context, index) {
+                return SideMenuWidget(sideMenuList[index]);
+              },
+              itemCount: sideMenuList.length,
+            ),
+          )
+        ],
       ),
     );
   }
@@ -67,7 +63,6 @@ class SideMenuWidget extends StatelessWidget {
       onTap: () {
         // Navigator.of(context).pushNamed(sideMenuItem.routeName);
         // onSideMenuItemClick(sideMenuItem);
-
       },
       child: ListTile(
         contentPadding: EdgeInsets.only(top: 10, left: 10),
@@ -88,12 +83,7 @@ class SideMenuWidget extends StatelessWidget {
           ),
           alignment: Alignment(-1.2, 0),
         ),
-        onTap: () {
-          Navigator.pop(context);
-        },
       ),
     );
   }
 }
-
-
