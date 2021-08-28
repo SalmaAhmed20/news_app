@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/categoryScreen/CategoryMenu.dart';
+import 'package:news_app/categoryScreen/NewsCategory.dart';
 class SideMenu extends StatelessWidget {
 
 
@@ -45,7 +46,7 @@ class SideMenu extends StatelessWidget {
               alignment: Alignment(-1.2, 0),
             ),
             onTap: () {
-              Navigator.pushReplacement(context,  MaterialPageRoute(builder: (context) =>CategoryMenu()));
+              Navigator.pushReplacement(context,  MaterialPageRoute(builder: (context) =>NewsCategory()));
             },
           ),
           ListTile(
