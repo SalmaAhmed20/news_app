@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/reusableWidget/providerLanguage.dart';
+import 'package:provider/provider.dart';
 import 'Decorate.dart';
 import 'package:news_app/reusableWidget/SideMenu.dart';
 import 'NewsCategory.dart';
-import 'package:news_app/reusableWidget/TopAppBar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CategoryMenu extends StatefulWidget {
@@ -14,8 +15,10 @@ class CategoryMenu extends StatefulWidget {
 
 class _CategoryMenuState extends State<CategoryMenu> {
   Decorate decore = new Decorate();
+  providerLanguage provider;
   @override
   Widget build(BuildContext context) {
+    provider =Provider.of<providerLanguage>(context);
     return Scaffold(
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(70),
@@ -69,25 +72,37 @@ class _CategoryMenuState extends State<CategoryMenu> {
               ),
             ),
             Row(children: [
-              NewsCategory(AppLocalizations.of(context).title3, 'assets/images/sports.png',
-                  Color.fromARGB(255, 201, 28, 34), decore.decorateBottomLeft),
-              NewsCategory(AppLocalizations.of(context).title4, 'assets/images/Politics.png',
-                  Color.fromARGB(255, 0, 62, 144), decore.decoratebottomRight),
+              NewsCategory(
+                  provider.currentLocale=="en"?AppLocalizations.of(context).title3:"sports",
+                  'assets/images/sports.png',
+                  Color.fromARGB(255, 201, 28, 34),
+                  decore.decorateBottomLeft),
+              NewsCategory(
+                  provider.currentLocale=="en"?AppLocalizations.of(context).title4:"general",
+                  'assets/images/Politics.png',
+                  Color.fromARGB(255, 0, 62, 144),
+                  decore.decoratebottomRight),
             ]),
             Row(children: [
-              NewsCategory(AppLocalizations.of(context).title5, 'assets/images/health.png',
-                  Color.fromARGB(255, 237, 30, 121), decore.decorateBottomLeft),
               NewsCategory(
-                  AppLocalizations.of(context).title6,
+                  provider.currentLocale=="en"?AppLocalizations.of(context).title5:"health",
+                  'assets/images/health.png',
+                  Color.fromARGB(255, 237, 30, 121),
+                  decore.decorateBottomLeft),
+              NewsCategory(
+                  provider.currentLocale=="en"?AppLocalizations.of(context).title6:"business",
                   'assets/images/bussines.png',
                   Color.fromARGB(255, 207, 126, 72),
                   decore.decoratebottomRight),
             ]),
             Row(children: [
-              NewsCategory(AppLocalizations.of(context).title7, 'assets/images/environment.png',
-                  Color.fromARGB(255, 72, 130, 207), decore.decorateBottomLeft),
               NewsCategory(
-                  AppLocalizations.of(context).title8,
+                  provider.currentLocale=="en"?AppLocalizations.of(context).title7:"entertainment",
+                  'assets/images/environment.png',
+                  Color.fromARGB(255, 72, 130, 207),
+                  decore.decorateBottomLeft),
+              NewsCategory(
+                  provider.currentLocale=="en"?AppLocalizations.of(context).title8:"science",
                   'assets/images/science.png',
                   Color.fromARGB(255, 242, 211, 82),
                   decore.decoratebottomRight),

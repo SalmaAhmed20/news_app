@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app/categoryScreen/CategoryMenu.dart';
 import 'package:news_app/reusableWidget/setting.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class SideMenu extends StatelessWidget {
 
 
@@ -13,7 +14,7 @@ class SideMenu extends StatelessWidget {
         children: [
           Container(
             height: 140,
-            child: const DrawerHeader(
+            child: DrawerHeader(
               decoration: BoxDecoration(
                 color: Color.fromARGB(255, 57, 165, 82),
               ),
@@ -24,10 +25,10 @@ class SideMenu extends StatelessWidget {
                       color: Colors.white,
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'Poppins'),
-                ),
-              ),
-            ),
+                      fontFamily: 'Poppins')
+                )
+              )
+            )
           ),
           ListTile(
             contentPadding: EdgeInsets.only(top: 10, left: 10),

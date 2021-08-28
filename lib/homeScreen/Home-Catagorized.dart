@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/api/APIManger.dart';
 import 'package:news_app/reusableWidget/SideMenu.dart';
+import 'package:news_app/reusableWidget/providerLanguage.dart';
+import 'package:provider/provider.dart';
 import '../reusableWidget/TopAppBar.dart';
 import '../tabs/HomeTabScreen.dart';
 import '../model/SourcesResponse.dart';
@@ -16,15 +18,20 @@ class HomeCatogrized extends StatefulWidget {
 
 class _HomeCatogrizedState extends State<HomeCatogrized> {
   @override
+  providerLanguage provider;
+
   bool isSearchPage = true;
   Widget customwidget;
   Future<SourcesResponse> newsFuture;
   void initState() {
     super.initState();
-    newsFuture = getNewsSources(widget.Category);
+
   }
 
   Widget build(BuildContext context) {
+    provider = Provider.of<providerLanguage>(context);
+    print(widget.Category);
+    newsFuture = getNewsSources(widget.Category,provider.currentLocale);
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(70),
@@ -46,7 +53,7 @@ class _HomeCatogrizedState extends State<HomeCatogrized> {
                 return IconButton(
                     onPressed: () {
                       setState(() {
-                        this.newsFuture = getNewsSources(widget.Category);
+                        this.newsFuture =getNewsSources(widget.Category,provider.currentLocale);
                       });
                     },
                     icon: Icon(Icons.refresh));
