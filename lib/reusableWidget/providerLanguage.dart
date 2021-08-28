@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 class providerLanguage extends ChangeNotifier{
- String currentLocale;
+ String currentLocale = 'en';
 providerLanguage(bool isEng){
   if(isEng)
     this.currentLocale ='en';

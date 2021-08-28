@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/categoryScreen/CategoryMenu.dart';
 import 'package:news_app/reusableWidget/setting.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class SideMenu extends StatelessWidget {
 
 
@@ -18,7 +19,7 @@ class SideMenu extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  'News App!',
+                  AppLocalizations.of(context).title9,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 25,
@@ -37,7 +38,7 @@ class SideMenu extends StatelessWidget {
             ),
             title: Align(
               child: new Text(
-                'Categories',
+                AppLocalizations.of(context).title10,
                 style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
@@ -60,7 +61,7 @@ class SideMenu extends StatelessWidget {
             ),
             title: Align(
               child: new Text(
-                'Settings',
+                AppLocalizations.of(context).title11,
                 style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,

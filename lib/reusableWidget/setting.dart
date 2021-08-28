@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'providerLanguage.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 class setting extends StatefulWidget{
   @override
   _setting createState() => _setting();
 }
 class _setting extends State<setting> {
-  List<String> _languages = ['English', 'Arabic'];
-  String _ItemSelected = 'English';
+  List<String> _languages = [AppLocalizations.of(context).title14, AppLocalizations.of(context).title15];
+  String _ItemSelected = AppLocalizations.of(context).title14;
    providerLanguage provider;
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class _setting extends State<setting> {
     return Scaffold(
         appBar: AppBar(leading: Icon(Icons.menu,size: 30 ),
           centerTitle: true,
-          title: Text(AppLocalizations.of(context).title11, style: TextStyle(fontFamily: 'ElMessiri',
+          title: Text(AppLocalizations.of(context).title11, style: TextStyle(fontFamily: 'exo',
               color: Colors.white), textAlign: TextAlign.center,),
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(40))
@@ -34,7 +35,7 @@ class _setting extends State<setting> {
             children: [
               Align(
                   alignment: Alignment.topLeft,
-                  child: Text('\n'+'      '+AppLocalizations.of(context).title12,style: TextStyle(fontFamily: 'ElMessiri',
+                  child: Text('\n'+'      '+AppLocalizations.of(context).title12,style: TextStyle(fontFamily: "PoppinsBold",
                       color: Colors.black87, fontWeight: FontWeight.bold,fontSize:18) ,)),
               Center( child: Padding(
                   padding: const EdgeInsets.all(28.0),
@@ -64,7 +65,7 @@ class _setting extends State<setting> {
                         onChanged: (newValue) {
                           setState(() {
                             //localization
-                            if(newValue == 'Arabic'){
+                            if(newValue == AppLocalizations.of(context).title15){
                               provider.changeLanguage("ar");
                               Navigator.pop(context);
                             }else{

@@ -3,6 +3,7 @@ import 'Decorate.dart';
 import 'package:news_app/reusableWidget/SideMenu.dart';
 import 'NewsCategory.dart';
 import 'package:news_app/reusableWidget/TopAppBar.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CategoryMenu extends StatefulWidget {
   static const routeName = "Category Menu";
@@ -27,7 +28,7 @@ class _CategoryMenuState extends State<CategoryMenu> {
               title: Container(
                 padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
                 child: Center(
-                  child: Text("NewsApp",
+                  child: Text(AppLocalizations.of(context).title,
                       style: TextStyle(
                         fontFamily: 'exo',
                         fontSize: 25,
@@ -52,7 +53,7 @@ class _CategoryMenuState extends State<CategoryMenu> {
                         child: Stack(
                       children: [
                         Text(
-                          "Pick your category of interest",
+                          AppLocalizations.of(context).title2,
                           style: TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
@@ -68,25 +69,25 @@ class _CategoryMenuState extends State<CategoryMenu> {
               ),
             ),
             Row(children: [
-              NewsCategory("Sports", 'assets/images/sports.png',
+              NewsCategory(AppLocalizations.of(context).title3, 'assets/images/sports.png',
                   Color.fromARGB(255, 201, 28, 34), decore.decorateBottomLeft),
-              NewsCategory("Politics", 'assets/images/Politics.png',
+              NewsCategory(AppLocalizations.of(context).title4, 'assets/images/Politics.png',
                   Color.fromARGB(255, 0, 62, 144), decore.decoratebottomRight),
             ]),
             Row(children: [
-              NewsCategory("Health", 'assets/images/health.png',
+              NewsCategory(AppLocalizations.of(context).title5, 'assets/images/health.png',
                   Color.fromARGB(255, 237, 30, 121), decore.decorateBottomLeft),
               NewsCategory(
-                  "Business",
+                  AppLocalizations.of(context).title6,
                   'assets/images/bussines.png',
                   Color.fromARGB(255, 207, 126, 72),
                   decore.decoratebottomRight),
             ]),
             Row(children: [
-              NewsCategory("Enviroment", 'assets/images/environment.png',
+              NewsCategory(AppLocalizations.of(context).title7, 'assets/images/environment.png',
                   Color.fromARGB(255, 72, 130, 207), decore.decorateBottomLeft),
               NewsCategory(
-                  "Science",
+                  AppLocalizations.of(context).title8,
                   'assets/images/science.png',
                   Color.fromARGB(255, 242, 211, 82),
                   decore.decoratebottomRight),

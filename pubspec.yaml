@@ -41,12 +41,13 @@ dev_dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-
+  intl: ^0.17.0
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
+  generate: true
   fonts:
     - family: Poppins
       fonts:
@@ -75,6 +76,7 @@ flutter:
     - assets/images/3.0x/
     - assets/images/2.0x/
     - assets/images/
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
