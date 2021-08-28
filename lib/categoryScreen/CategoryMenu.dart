@@ -36,7 +36,6 @@ class _CategoryMenuState extends State<CategoryMenu> {
                 ),
               )),
         ),
-        drawer: SideMenu(),
         body: ListView(children: [
           Column(children: [
             Container(

@@ -22,8 +22,8 @@ class NewsCategory extends StatelessWidget {
                     width: 135.0,
                     child:decorate(color,imagePath),
                   ),
-                  onTap: (){
-                    Navigator.pushReplacement(context,  MaterialPageRoute(builder: (context) =>HomeCatogrized(title)));},
+                //  onTap: (){
+                  //  Navigator.pushReplacement(context,  MaterialPageRoute(builder: (context) =>HomeCatogrized(title));},
                 ),
 
 

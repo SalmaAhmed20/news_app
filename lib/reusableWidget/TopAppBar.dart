@@ -114,15 +114,15 @@ class _TopBarState extends State<TopBar> {
                                               color: Color(0xFFC8E6CF))),
                                     ),
                                   ),
-                                  IconButton(
+                                 /* IconButton(
                                     onPressed: () {
                                       Navigator.pushReplacement(context,
-                                          MaterialPageRoute(builder: (context) => HomeCatogrized(widget.title,KeyWord:myController.text)));
+                                        //  MaterialPageRoute(builder: (context) => HomeCatogrized(widget.title,KeyWord:myController.text)));
                                     },
                                     icon: Icon(Icons.search),
                                     color: Color(0xFF39A552),
                                     iconSize: 35,
-                                  ),
+                                  ),*/
                                 ],
                               )),
                         );

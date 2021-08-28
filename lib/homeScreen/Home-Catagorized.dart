@@ -1,3 +1,5 @@
+//import 'package:drawer/api/APIManger.dart';
+//import 'package:drawer/reusableWidget/SideMenu.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/api/APIManger.dart';
 import 'package:news_app/reusableWidget/SideMenu.dart';
@@ -5,10 +7,14 @@ import '../reusableWidget/TopAppBar.dart';
 import '../tabs/HomeTabScreen.dart';
 import '../model/SourcesResponse.dart';
 
+class CategoryScreenArguments {
+  final String category;
+  final String KeyWord;
+  CategoryScreenArguments(this.category, this.KeyWord);
+}
 class HomeCatogrized extends StatefulWidget {
-  final String Category;
-  String KeyWord;
-  HomeCatogrized(this.Category,{this.KeyWord});
+  final CategoryScreenArguments category;
+  HomeCatogrized(this.category);
 
   @override
   _HomeCatogrizedState createState() => _HomeCatogrizedState();
@@ -21,16 +27,16 @@ class _HomeCatogrizedState extends State<HomeCatogrized> {
   Future<SourcesResponse> newsFuture;
   void initState() {
     super.initState();
-    newsFuture = getNewsSources(widget.Category);
+
   }
 
   Widget build(BuildContext context) {
+    newsFuture = getNewsSources(widget.category.category);
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(70),
-        child: TopBar(isSearchPage, widget.Category),
+        child: TopBar(isSearchPage, widget.category.category),
       ),
-      drawer: SideMenu(),
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
@@ -41,12 +47,12 @@ class _HomeCatogrizedState extends State<HomeCatogrized> {
             future: newsFuture,
             builder: (buildcontext, snapshot) {
               if (snapshot.hasData) {
-                return HomeTabs(snapshot.data.sources,KeyWord:widget.KeyWord);
+                return HomeTabs(snapshot.data.sources,KeyWord:widget.category.KeyWord);
               } else if (snapshot.hasError) {
                 return IconButton(
                     onPressed: () {
                       setState(() {
-                        this.newsFuture = getNewsSources(widget.Category);
+                        this.newsFuture = getNewsSources(widget.category.category);
                       });
                     },
                     icon: Icon(Icons.refresh));
