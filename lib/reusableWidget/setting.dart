@@ -63,7 +63,7 @@ class _setting extends State<setting> {
                             child: DropdownButton<String>(
                               elevation: 0,
                               isExpanded: true,
-                              dropdownColor: Colors.transparent,
+                              dropdownColor: Colors.white,
                               icon: Icon(Icons.keyboard_arrow_down,
                                   color: Colors.green),
                               iconSize: 25,

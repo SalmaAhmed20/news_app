@@ -78,7 +78,7 @@ class _CategoryMenuState extends State<CategoryMenu> {
                   Color.fromARGB(255, 201, 28, 34),
                   decore.decorateBottomLeft),
               NewsCategory(
-                  provider.currentLocale=="en"?AppLocalizations.of(context).title4:"general",
+                  "general",
                   'assets/images/Politics.png',
                   Color.fromARGB(255, 0, 62, 144),
                   decore.decoratebottomRight),

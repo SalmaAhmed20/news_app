@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/model/NewsItem.dart';
 
@@ -23,13 +24,12 @@ class NewsListItem extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: Image.network(
-                  _item.urlToImage == null
-                      ? 'https://www.google.com/search?q=breaking+news&sxsrf=ALeKk035pVw6ayyEi-VvPKU7AIWJBpESRw:1629761633729&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjUtPyZp8jyAhXJ6eAKHWmMADkQ_AUoAXoECAEQAw&biw=1536&bih=754#imgrc=UPqakD3QGXbvzM'
-                      : _item.urlToImage,
-                  fit: BoxFit.cover,
-                ),
+                  borderRadius: BorderRadius.circular(15),
+                   child: CachedNetworkImage(
+                     imageUrl: _item.urlToImage,
+                     placeholder: (context, url) => new CircularProgressIndicator(),
+                     errorWidget: (context, url, error) => new Icon(Icons.error),
+                   ),
               ),
               Container(
                 margin: const EdgeInsets.fromLTRB(0, 8, 0, 8),
