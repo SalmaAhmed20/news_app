@@ -64,12 +64,6 @@ class _NewsCategoryState extends State<NewsCategory> {
     );
   }
 
-  /*void onCategoryItemClick(CategoryGridItem category){
-    setState(() {
-      //selectedCategory = category;
-      //title = category.title;
-    });
-  }*/
 
   List<CategoryGridItem> getCategoriesList(){
     List<CategoryGridItem> list = [
@@ -77,32 +71,38 @@ class _NewsCategoryState extends State<NewsCategory> {
           'sports',
           'assets/images/sports.png',
           Color.fromARGB(255, 201, 28, 34),
+          'sports',
           true),
       CategoryGridItem(
           'politics',
           'assets/images/Politics.png',
           Color.fromARGB(255, 0,62, 144),
+          'politics',
           false),
       CategoryGridItem(
           'health',
           'assets/images/health.png',
           Color.fromARGB(255, 237,30, 121),
+          'health',
           true),
       CategoryGridItem(
           'business',
           'assets/images/bussines.png',
           Color.fromARGB(255, 207,126, 72),
+          'business',
           false),
       CategoryGridItem(
           'Environment',
           'assets/images/environment.png',
           Color.fromARGB(255, 72,130, 207),
+          'Environment',
           true
       ),
       CategoryGridItem(
           'science',
           'assets/images/science.png',
           Color.fromARGB(255, 242,211, 82),
+          'science',
           false)
     ];
     return list;
