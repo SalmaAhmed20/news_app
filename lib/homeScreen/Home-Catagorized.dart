@@ -12,6 +12,7 @@ class CategoryScreenArguments {
   final String KeyWord;
   CategoryScreenArguments(this.category, this.KeyWord);
 }
+
 class HomeCatogrized extends StatefulWidget {
   final CategoryScreenArguments category;
   HomeCatogrized(this.category);
@@ -27,32 +28,28 @@ class _HomeCatogrizedState extends State<HomeCatogrized> {
   Future<SourcesResponse> newsFuture;
   void initState() {
     super.initState();
-
   }
 
   Widget build(BuildContext context) {
     newsFuture = getNewsSources(widget.category.category);
     return Scaffold(
-      /*appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(70),
-        child: TopBar(isSearchPage, widget.category.category),
-      ),*/
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage('assets/images/3.0x/pattern@3x.png'),
-                fit: BoxFit.fill
-            )),
+                fit: BoxFit.fill)),
         child: FutureBuilder<SourcesResponse>(
             future: newsFuture,
             builder: (buildcontext, snapshot) {
               if (snapshot.hasData) {
-                return HomeTabs(snapshot.data.sources,KeyWord:widget.category.KeyWord);
+                return HomeTabs(snapshot.data.sources,
+                    KeyWord: widget.category.KeyWord);
               } else if (snapshot.hasError) {
                 return IconButton(
                     onPressed: () {
                       setState(() {
-                        this.newsFuture = getNewsSources(widget.category.category);
+                        this.newsFuture =
+                            getNewsSources(widget.category.category);
                       });
                     },
                     icon: Icon(Icons.refresh));
