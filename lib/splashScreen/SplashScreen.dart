@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../categoryScreen/CategoryMenu.dart';
+import '../homeScreen/HomeScreen.dart';
 
 class SplashScreen extends StatefulWidget {
   static const routeName = "SplashScreen";
@@ -17,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
       Duration(seconds: 3),
       () => Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => CategoryMenu())),
+          context, MaterialPageRoute(builder: (context) => HomeScreen())),
     );
   }
 

@@ -1,47 +1,114 @@
+import 'CategoryGridItem.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app/homeScreen/Home-Catagorized.dart';
+import 'CategoryMenu.dart';
+class NewsCategory extends StatefulWidget {
+  Function onCategoryItemClick;
+  NewsCategory(this.onCategoryItemClick);
 
-class NewsCategory extends StatelessWidget {
-  String title;
-  String imagePath;
-  Color color;
-  final Function decorate;
-  NewsCategory(this.title, this.imagePath, this.color,this.decorate);
+  @override
+  _NewsCategoryState createState() => _NewsCategoryState();
+}
+
+class _NewsCategoryState extends State<NewsCategory> {
+  List<CategoryGridItem>data;
+
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Stack(
-        alignment: Alignment.bottomCenter,
-        children: [
-          Padding(
-              padding: const EdgeInsets.only(top:5.0,bottom: 5.0,left:5.0),
-              child: Container(
-                child:InkWell(
-                  child:Container(
-                    height: 171.0,
-                    width: 135.0,
-                    child:decorate(color,imagePath),
-                  ),
-                //  onTap: (){
-                  //  Navigator.pushReplacement(context,  MaterialPageRoute(builder: (context) =>HomeCatogrized(title));},
-                ),
-
-
-              )
+    data = getCategoriesList();
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/bg_image.png'),
+            fit: BoxFit.cover,
           ),
-          Padding(
+        ),
+        child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(
-              title,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 22,
-                  fontFamily: "Exo"),
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ],
+            child:Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text(
+                    "pick your category of interest",
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'PoppinsBold',
+                      color: Color.fromRGBO(79, 90, 105, 1.0),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GridView.builder(
+                    shrinkWrap: true,
+                    gridDelegate:
+                    SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
+                        mainAxisSpacing: 12,
+                        crossAxisSpacing: 12
+                    ) ,
+                    itemBuilder: (buildContext,index)=>CategoryMenu(data[index],
+                      widget.onCategoryItemClick
+                    ),
+                    itemCount: data.length,
+
+                  ),
+                ),
+              ],
+            )
+        ),
       ),
     );
+  }
+
+  /*void onCategoryItemClick(CategoryGridItem category){
+    setState(() {
+      //selectedCategory = category;
+      //title = category.title;
+    });
+  }*/
+
+  List<CategoryGridItem> getCategoriesList(){
+    List<CategoryGridItem> list = [
+      CategoryGridItem(
+          'sports',
+          'assets/images/sports.png',
+          Color.fromARGB(255, 201, 28, 34),
+          "sports",
+          true),
+      CategoryGridItem(
+          'politics',
+          'assets/images/Politics.png',
+          Color.fromARGB(255, 0,62, 144),
+          'politics',
+          false),
+      CategoryGridItem(
+          'health',
+          'assets/images/health.png',
+          Color.fromARGB(255, 237,30, 121),
+          'health',
+          true),
+      CategoryGridItem(
+          'business',
+          'assets/images/bussines.png',
+          Color.fromARGB(255, 207,126, 72),
+          'business',
+          false),
+      CategoryGridItem(
+          'Environment',
+          'assets/images/environment.png',
+          Color.fromARGB(255, 72,130, 207),
+          'Environment',
+          true
+      ),
+      CategoryGridItem(
+          'science',
+          'assets/images/science.png',
+          Color.fromARGB(255, 242,211, 82),
+          'science',
+          false)
+    ];
+    return list;
   }
 }

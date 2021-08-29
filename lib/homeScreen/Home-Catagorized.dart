@@ -33,10 +33,10 @@ class _HomeCatogrizedState extends State<HomeCatogrized> {
   Widget build(BuildContext context) {
     newsFuture = getNewsSources(widget.category.category);
     return Scaffold(
-      appBar: PreferredSize(
+      /*appBar: PreferredSize(
         preferredSize: const Size.fromHeight(70),
         child: TopBar(isSearchPage, widget.category.category),
-      ),
+      ),*/
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
