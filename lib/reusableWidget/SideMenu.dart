@@ -1,9 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app/categoryScreen/CategoryMenu.dart';
 import 'package:news_app/categoryScreen/NewsCategory.dart';
+import 'package:news_app/reusableWidget/setting.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class SideMenu extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -11,22 +11,22 @@ class SideMenu extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           Container(
-            height: 140,
-            child: const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 57, 165, 82),
-              ),
-              child: Center(
-                child: Text(
-                  'News App!',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Poppins'),
-                ),
-              ),
-            ),
+              height: 140,
+              child: DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 57, 165, 82),
+                  ),
+                  child: Center(
+                      child: Text(
+                          AppLocalizations.of(context).title9,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Poppins')
+                      )
+                  )
+              )
           ),
           ListTile(
             contentPadding: EdgeInsets.only(top: 10, left: 10),
@@ -35,18 +35,24 @@ class SideMenu extends StatelessWidget {
               size: 35,
               color: Colors.black,
             ),
-            title: Align(
-              child: new Text(
-                'Categories',
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Poppins'),
-              ),
-              alignment: Alignment(-1.2, 0),
+            title: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Align(
+                  child: new Text(
+                    AppLocalizations.of(context).title10,
+                    style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Poppins'),
+                  ),
+                  alignment: Alignment(-1.2, 0),
+                ),
+              ],
             ),
             onTap: () {
-              Navigator.pushReplacement(context,  MaterialPageRoute(builder: (context) =>NewsCategory()));
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => NewsCategory()));
             },
           ),
           ListTile(
@@ -58,18 +64,24 @@ class SideMenu extends StatelessWidget {
               size: 35,
               color: Colors.black,
             ),
-            title: Align(
-              child: new Text(
-                'Settings',
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Poppins'),
-              ),
-              alignment: Alignment(-1.2, 0),
+            title: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Align(
+                  child: new Text(
+                    AppLocalizations.of(context).title11,
+                    style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Poppins'),
+                  ),
+                  alignment: Alignment(-1.2, 0),
+                ),
+              ],
             ),
             onTap: () {
-
+              Navigator.pushReplacement(
+                  context, MaterialPageRoute(builder: (context) => setting()));
             },
           ),
         ],

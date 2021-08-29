@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app/homeScreen/Home-Catagorized.dart';
 
 import 'CategoryGridItem.dart';
 
@@ -16,7 +17,10 @@ class CategoryMenu extends StatelessWidget {
 
     return InkWell(
       onTap: (){
-
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => HomeCatogrized(category.title)));
       },
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 10),

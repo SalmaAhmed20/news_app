@@ -12,7 +12,7 @@ Future<SourcesResponse> getNewsSources(String Category,String lang) async {
   final uri = Uri.https('newsapi.org', 'v2/top-headlines/sources',
       {'category': Category, 'apiKey': 'c63c035b08714bdaba976513fd2077f5',"language":lang});
   final response = await http.get(uri);
-  print(uri.toString());
+  //print(uri.toString());
   print(response.body);
   if (response.statusCode == 200) {
     return SourcesResponse.fromJsonMap(jsonDecode(response.body));

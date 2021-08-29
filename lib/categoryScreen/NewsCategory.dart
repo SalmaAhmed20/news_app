@@ -1,3 +1,5 @@
+import 'package:news_app/reusableWidget/SideMenu.dart';
+
 import 'CategoryGridItem.dart';
 import 'package:flutter/material.dart';
 import 'CategoryMenu.dart';
@@ -18,6 +20,7 @@ class _NewsCategoryState extends State<NewsCategory> {
     data = getCategoriesList();
     return Scaffold(
       appBar: MyAppbar(title:"New Menu",),
+      drawer: SideMenu(),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -43,18 +46,21 @@ class _NewsCategoryState extends State<NewsCategory> {
                   ),
                 ),
                 Expanded(
-                  child: GridView.builder(
-                    shrinkWrap: true,
-                    gridDelegate:
-                    SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
-                        mainAxisSpacing: 12,
-                        crossAxisSpacing: 12
-                    ) ,
-                    itemBuilder: (buildContext,index)=>CategoryMenu(data[index]
-                      //widget.onCategoryItemClick
-                    ),
-                    itemCount: data.length,
+                  child: Directionality(
+                    textDirection: TextDirection.ltr,
+                    child: GridView.builder(
+                      shrinkWrap: true,
+                      gridDelegate:
+                      SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
+                          mainAxisSpacing: 12,
+                          crossAxisSpacing: 12
+                      ) ,
+                      itemBuilder: (buildContext,index)=>CategoryMenu(data[index]
+                        //widget.onCategoryItemClick
+                      ),
+                      itemCount: data.length,
 
+                    ),
                   ),
                 ),
               ],

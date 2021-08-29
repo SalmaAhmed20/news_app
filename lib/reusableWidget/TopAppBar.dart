@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/homeScreen/Home-Catagorized.dart';
-import 'package:news_app/reusableWidget/SideMenu.dart';
 import 'Marquee.dart';
 
 class TopBar extends StatefulWidget {
@@ -16,7 +15,7 @@ class TopBar extends StatefulWidget {
 class _TopBarState extends State<TopBar> {
   Icon customIcon = Icon(Icons.search);
   Widget customwidget;
-  bool searchbar=false;
+  bool searchbar = false;
   final myController = TextEditingController();
 
   @override
@@ -81,10 +80,11 @@ class _TopBarState extends State<TopBar> {
                                   IconButton(
                                     onPressed: () {
                                       setState(() {
-                                        searchbar=true;
+                                        searchbar = true;
                                         customIcon = Icon(Icons.search);
                                         customwidget = Container(
-                                          padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                                          padding: const EdgeInsets.fromLTRB(
+                                              0, 20, 0, 0),
                                           child: Center(
                                             child: Text(widget.title,
                                                 style: GoogleFonts.exo(
@@ -106,6 +106,15 @@ class _TopBarState extends State<TopBar> {
                                   Expanded(
                                     child: TextField(
                                       controller: myController,
+                                      onSubmitted: (String Val) async =>
+                                          await Navigator.pushReplacement(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      HomeCatogrized(
+                                                          widget.title,
+                                                          KeyWord: myController
+                                                              .text))),
                                       decoration: InputDecoration(
                                           border: InputBorder.none,
                                           hintText: 'Search Article',
@@ -116,8 +125,13 @@ class _TopBarState extends State<TopBar> {
                                   ),
                                   IconButton(
                                     onPressed: () {
-                                      Navigator.pushReplacement(context,
-                                          MaterialPageRoute(builder: (context) => HomeCatogrized(widget.title,KeyWord:myController.text)));
+                                      Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  HomeCatogrized(widget.title,
+                                                      KeyWord:
+                                                          myController.text)));
                                     },
                                     icon: Icon(Icons.search),
                                     color: Color(0xFF39A552),
@@ -144,4 +158,3 @@ class _TopBarState extends State<TopBar> {
     );
   }
 }
-
