@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:news_app/categoryScreen/NewsCategory.dart';
+import 'package:news_app/homeScreen/HomeScreen.dart';
 
 import '../categoryScreen/CategoryMenu.dart';
 
@@ -18,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
       Duration(seconds: 3),
       () => Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => NewsCategory())),
+          context, MaterialPageRoute(builder: (context) => HomeScreen())),
     );
   }
 

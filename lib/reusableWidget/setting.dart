@@ -23,7 +23,7 @@ class _setting extends State<setting> {
     ];
     _ItemSelected = AppLocalizations.of(context).title14;
     return Scaffold(
-        appBar: AppBar(
+        /*appBar: AppBar(
           centerTitle: true,
           title: Text(
             AppLocalizations.of(context).title11,
@@ -33,8 +33,8 @@ class _setting extends State<setting> {
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(40))),
           backgroundColor: Colors.green,
-        ),
-        drawer: SideMenu(),
+        ),*/
+        //drawer: SideMenu(),
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(

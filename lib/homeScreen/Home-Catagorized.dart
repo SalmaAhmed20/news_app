@@ -1,3 +1,5 @@
+//import 'package:drawer/api/APIManger.dart';
+//import 'package:drawer/reusableWidget/SideMenu.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/api/APIManger.dart';
 import 'package:news_app/reusableWidget/SideMenu.dart';
@@ -7,10 +9,15 @@ import '../reusableWidget/TopAppBar.dart';
 import '../tabs/HomeTabScreen.dart';
 import '../model/SourcesResponse.dart';
 
+class CategoryScreenArguments {
+  final String category;
+  final String KeyWord;
+  CategoryScreenArguments(this.category, this.KeyWord);
+}
+
 class HomeCatogrized extends StatefulWidget {
-  final String Category;
-  String KeyWord;
-  HomeCatogrized(this.Category,{this.KeyWord});
+  final CategoryScreenArguments category;
+  HomeCatogrized(this.category);
 
   @override
   _HomeCatogrizedState createState() => _HomeCatogrizedState();
@@ -18,42 +25,35 @@ class HomeCatogrized extends StatefulWidget {
 
 class _HomeCatogrizedState extends State<HomeCatogrized> {
   @override
-  providerLanguage provider;
-
   bool isSearchPage = true;
   Widget customwidget;
+  providerLanguage provider;
   Future<SourcesResponse> newsFuture;
   void initState() {
     super.initState();
-
   }
 
   Widget build(BuildContext context) {
     provider = Provider.of<providerLanguage>(context);
-    print(widget.Category);
-    newsFuture = getNewsSources(widget.Category,provider.currentLocale);
+    newsFuture = getNewsSources(widget.category.category,provider.currentLocale);
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(70),
-        child: TopBar(isSearchPage, widget.Category),
-      ),
-      drawer: SideMenu(),
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage('assets/images/3.0x/pattern@3x.png'),
-                fit: BoxFit.fill
-            )),
+                fit: BoxFit.fill)),
         child: FutureBuilder<SourcesResponse>(
             future: newsFuture,
             builder: (buildcontext, snapshot) {
               if (snapshot.hasData) {
-                return HomeTabs(snapshot.data.sources,KeyWord:widget.KeyWord);
+                return HomeTabs(snapshot.data.sources,
+                    KeyWord: widget.category.KeyWord);
               } else if (snapshot.hasError) {
                 return IconButton(
                     onPressed: () {
                       setState(() {
-                        this.newsFuture =getNewsSources(widget.Category,provider.currentLocale);
+                        this.newsFuture =
+                            getNewsSources(widget.category.category,provider.currentLocale);
                       });
                     },
                     icon: Icon(Icons.refresh));

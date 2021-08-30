@@ -1,12 +1,9 @@
-import 'package:news_app/reusableWidget/SideMenu.dart';
-
 import 'CategoryGridItem.dart';
 import 'package:flutter/material.dart';
 import 'CategoryMenu.dart';
-import 'Appbar.dart';
 class NewsCategory extends StatefulWidget {
   Function onCategoryItemClick;
-  NewsCategory();
+  NewsCategory(this.onCategoryItemClick);
 
   @override
   _NewsCategoryState createState() => _NewsCategoryState();
@@ -19,8 +16,6 @@ class _NewsCategoryState extends State<NewsCategory> {
   Widget build(BuildContext context) {
     data = getCategoriesList();
     return Scaffold(
-      appBar: MyAppbar(title:"New Menu",),
-      drawer: SideMenu(),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -46,21 +41,18 @@ class _NewsCategoryState extends State<NewsCategory> {
                   ),
                 ),
                 Expanded(
-                  child: Directionality(
-                    textDirection: TextDirection.ltr,
-                    child: GridView.builder(
-                      shrinkWrap: true,
-                      gridDelegate:
-                      SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
-                          mainAxisSpacing: 12,
-                          crossAxisSpacing: 12
-                      ) ,
-                      itemBuilder: (buildContext,index)=>CategoryMenu(data[index]
-                        //widget.onCategoryItemClick
-                      ),
-                      itemCount: data.length,
-
+                  child: GridView.builder(
+                    shrinkWrap: true,
+                    gridDelegate:
+                    SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
+                        mainAxisSpacing: 12,
+                        crossAxisSpacing: 12
+                    ) ,
+                    itemBuilder: (buildContext,index)=>CategoryMenu(data[index],
+                        widget.onCategoryItemClick
                     ),
+                    itemCount: data.length,
+
                   ),
                 ),
               ],
@@ -70,6 +62,12 @@ class _NewsCategoryState extends State<NewsCategory> {
     );
   }
 
+  /*void onCategoryItemClick(CategoryGridItem category){
+    setState(() {
+      //selectedCategory = category;
+      //title = category.title;
+    });
+  }*/
 
   List<CategoryGridItem> getCategoriesList(){
     List<CategoryGridItem> list = [
@@ -77,7 +75,7 @@ class _NewsCategoryState extends State<NewsCategory> {
           'sports',
           'assets/images/sports.png',
           Color.fromARGB(255, 201, 28, 34),
-          'sports',
+          "sports",
           true),
       CategoryGridItem(
           'politics',
