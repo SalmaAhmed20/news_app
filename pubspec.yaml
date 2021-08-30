@@ -62,9 +62,6 @@ flutter:
     - family: Exo
       fonts:
         - asset: assets/fonts/Exo-Regular.ttf
-    - family: PoppinsBold
-      fonts:
-        - asset: assets/fonts/Poppins-Bold.ttf
 
 
   # The following line ensures that the Material Icons font is

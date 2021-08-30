@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/model/NewsItem.dart';
@@ -46,11 +47,12 @@ class ArticalContent extends StatelessWidget {
                   Expanded(
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.network(
-                        _newsItem.urlToImage == null
-                            ? 'https://www.google.com/search?q=breaking+news&sxsrf=ALeKk035pVw6ayyEi-VvPKU7AIWJBpESRw:1629761633729&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjUtPyZp8jyAhXJ6eAKHWmMADkQ_AUoAXoECAEQAw&biw=1536&bih=754#imgrc=UPqakD3QGXbvzM'
-                            : _newsItem.urlToImage,
-                        fit: BoxFit.cover,
+
+                      child:CachedNetworkImage(
+                        imageUrl:   _newsItem.urlToImage,
+                        progressIndicatorBuilder: (context, url, downloadProgress) =>
+                            CircularProgressIndicator(value: downloadProgress.progress),
+                        errorWidget: (context, url, error) => Icon(Icons.error),
                       ),
                     ),
                   ),

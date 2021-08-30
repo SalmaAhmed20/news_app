@@ -27,8 +27,9 @@ class NewsListItem extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                    child: CachedNetworkImage(
                      imageUrl: _item.urlToImage,
-                     placeholder: (context, url) => new CircularProgressIndicator(),
-                     errorWidget: (context, url, error) => new Icon(Icons.error),
+                     progressIndicatorBuilder: (context, url, downloadProgress) =>
+                         CircularProgressIndicator(value: downloadProgress.progress),
+                     errorWidget: (context, url, error) => Icon(Icons.error),
                    ),
               ),
               Container(

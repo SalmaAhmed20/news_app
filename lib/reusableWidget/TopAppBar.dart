@@ -98,6 +98,19 @@ class _TopBarState extends State<TopBar> {
                                     Expanded(
                                       child: TextField(
                                         controller: myController,
+                                        onSubmitted: (String va) {
+                                          if (myController.text != '') {
+                                            Navigator.pushReplacement(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        HomeCatogrized(
+                                                            CategoryScreenArguments(
+                                                                widget.title,
+                                                                myController
+                                                                    .text))));
+                                          }
+                                        },
                                         decoration: InputDecoration(
                                             border: InputBorder.none,
                                             hintText:
