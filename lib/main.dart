@@ -13,16 +13,15 @@ Future<void> main() async {
   runApp(ChangeNotifierProvider(
       child: MyApp(),
       create: (BuildContext context) =>
-          providerLanguage(((prefs.getBool("isEng") ?? false)))));
+          ProviderLanguage(((prefs.getBool("isEng") ?? false)))));
 }
 
 class MyApp extends StatelessWidget {
-  providerLanguage provider;
-  /// This widget is the root of your application.
+  ProviderLanguage provider;
   @override
   Widget build(BuildContext context) {
-    provider = Provider.of<providerLanguage>(context);
-    return Consumer<providerLanguage>(builder: (context, theme, child) {
+    provider = Provider.of<ProviderLanguage>(context);
+    return Consumer<ProviderLanguage>(builder: (context, theme, child) {
       return MaterialApp(
           debugShowCheckedModeBanner: false,
           localizationsDelegates: [

@@ -17,14 +17,14 @@ class NewsFragement extends StatefulWidget {
 
 class _NewsFragementState extends State<NewsFragement> {
    Future <NewsResponse> _futureNews;
-   providerLanguage provider;
+   ProviderLanguage provider;
    @override
   void initState()
   {
     super.initState();
   }
   Widget build(BuildContext context) {
-    provider = Provider.of<providerLanguage>(context);
+    provider = Provider.of<ProviderLanguage>(context);
     _futureNews=LoadArticals(widget._sources,provider.currentLocale,Keyword:widget.KeyWord);
     return Container(
       child: FutureBuilder(

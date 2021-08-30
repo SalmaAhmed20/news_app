@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/model/NewsItem.dart';
-import 'package:news_app/reusableWidget/TopAppBar.dart';
+import 'package:news_app/reusableWidget/Marquee.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'NewsListItem.dart';
@@ -14,7 +14,22 @@ class ArticalContent extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(70),
-        child: TopBar(false, _newsItem.title),
+        child: AppBar(
+            shape: ContinuousRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(100),
+                  bottomRight: Radius.circular(100)),
+            ),
+          title: Center(
+              child: MarqueeWidget(
+                child: Text(_newsItem.title,
+                    style: TextStyle(
+                      fontFamily: 'Exo',
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400,
+                    )),
+              ))
+        )
       ),
       body: Container(
         // margin: const EdgeInsets.fromLTRB(0,20,0,0),

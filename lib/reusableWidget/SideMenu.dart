@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app/categoryScreen/NewsCategory.dart';
-import 'package:news_app/reusableWidget/setting.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class SideMenu extends StatelessWidget {
   Function onSideMenuItemClick;
@@ -21,7 +19,7 @@ class SideMenu extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 50),
             child: Center(
               child: Text(
-                '${AppLocalizations.of(context).title9} !',
+                '${AppLocalizations.of(context).title9}! ',
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -33,7 +31,7 @@ class SideMenu extends StatelessWidget {
           Expanded(
             child: ListView.builder(
               itemBuilder: (context, index) {
-                return SideMenuWidget(sideMenuList[index],onSideMenuItemClick);
+                  return SideMenuWidget(sideMenuList[index],onSideMenuItemClick);
               },
               itemCount: sideMenuList.length,
             ),
@@ -75,15 +73,20 @@ class SideMenuWidget extends StatelessWidget {
           size: 35,
           color: Colors.black,
         ),
-        title: Align(
-          child: new Text(
-            sideMenuItem.title,
-            style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Poppins'),
-          ),
-          alignment: Alignment(-1.2, 0),
+        title: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Align(
+              child: new Text(
+                sideMenuItem.title,
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Poppins'),
+              ),
+              alignment: Alignment(-1.2, 0),
+            ),
+          ],
         ),
       ),
     );
