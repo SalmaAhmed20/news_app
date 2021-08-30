@@ -1,0 +1,62 @@
+{
+  "title": "News App",
+  "@title": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "title2": "Pick your category of interest",
+  "@title2": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "title3": "Sports",
+  "@title3": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "title4": "Politics",
+  "@title4": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "title5": "Health",
+  "@title5": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "title6": "Business",
+  "@title6": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "title7": "Enviroment",
+  "@title7": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "title8": "Science",
+  "@title8": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "title9": "News App!",
+  "@title9": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "title10": "Categories",
+  "@title10": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "title11": "Settings",
+  "@title11": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "title12": "Language",
+  "@title12": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "title13": "BBC news",
+  "@title13": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "title14": "English",
+  "@title14": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "title15": "Arabic",
+  "@title15": {
+    "description": "The conventional newborn programmer greeting"
+  }
+}
