@@ -9,8 +9,6 @@ class CategoryMenu extends StatelessWidget {
   CategoryGridItem category;
   Function onCategoryItemClick;
   CategoryMenu(this. category,this.onCategoryItemClick);
-  // , this.onCategoryItemClick
-
   @override
   Widget build(BuildContext context) {
 
@@ -20,8 +18,6 @@ class CategoryMenu extends StatelessWidget {
       },
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 10),
-        height: 170,
-        width: 150,
         decoration: BoxDecoration(
           color: category.color,
           borderRadius: category.borderRadius,
@@ -29,16 +25,21 @@ class CategoryMenu extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image.asset(
-              category.imagePath,
-              height: 114,
+            Expanded(
+              child: Image.asset(
+                category.imagePath,
+              ),
             ),
-            Text(
-              category.title,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 22,
-                fontFamily: 'Exo',
+            Container(
+              margin: const EdgeInsets.symmetric(vertical:5,horizontal: 0),
+              child: Text(
+                category.title,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 25,
+                  fontFamily: 'Exo',
+                ),
               ),
             )
           ],

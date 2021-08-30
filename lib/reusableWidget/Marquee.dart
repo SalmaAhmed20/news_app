@@ -1,4 +1,4 @@
-//For Title text to automtic scroll
+//For Title text to automatic scroll
 import 'package:flutter/material.dart';
 
 class MarqueeWidget extends StatefulWidget {
